@@ -74,3 +74,16 @@ int main(void) {
 
     return 0;
 }
+/*
+ * BONUS TASK EXPLANATION: Bitwise AND (&) vs Modulo (%)
+ *
+ * 1. Why (head + 1) & (BUFFER_SIZE - 1) is faster on MCUs:
+ *    Modulo (%) requires division. Microcontrollers (like 8051, AVR, Cortex-M0)
+ *    do not have a hardware division unit. Modulo takes 20-100+ CPU clock cycles
+ *    via software division. Bitwise AND (&) takes only 1 single CPU cycle.
+ *
+ * 2. Why it only works when BUFFER_SIZE is a power of 2:
+ *    For size 8 (binary 0000 1000), 8 - 1 = 7 (binary 0000 0111).
+ *    Bitwise AND with 7 keeps values between 0 and 7.
+ *    When index reaches 8 (binary 1000), 8 & 7 = 0, wrapping back to index 0 automatically.
+ */
