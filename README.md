@@ -33,8 +33,7 @@ The buffer is configured in `ringbuf.c`:
 From the repository root:
 
 ```bash
-gcc -std=c11 -Wall -Wextra -O2 ringbuf.c -o ringbuf
-./ringbuf
+gcc  ringbuf.c -o ringbuf.exe
 ```
 
 ## Ring Buffer API
